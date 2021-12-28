@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=test
+comment0.text=\n\ Test\:\n\ Creates\ objects\ and\ calls\ methods\ so\ that\ reports\ can\ be\ generated.\n\ \n\ @author\ Student\ 17035205\n\ @version\ 1.0\ (Dec\ 2019)\n\ @see\ ItemGenerator,\ TotalProfitCalculator,\ StockItems,\ FileWriter\ &\ ConsolePrinter.\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\ \n\ main()\:\n\ Objects\ are\ created,\ and\ then\ the\ method\ generateItems()\ is\ called.\ The\ array\ is\ stocked\n\ in\ the\ variable\ items.\n\ Simple\ user\ interface\ to\ request\ a\ report\ in\ the\ console,\ or\ saved\ in\ a\ .txt.\n\ \n\ @param\ args\ main\ method,\ no\ args\ necessary.\n\ @throws\ FileNotFoundException\ Because\ {@link\ FileWriter}\ needs\ the\ exception.\n\ \n
+numComments=2
