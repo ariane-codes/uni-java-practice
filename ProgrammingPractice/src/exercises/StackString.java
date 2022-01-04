@@ -15,6 +15,7 @@ public class StackString {
     public void push (String value) {
         if (currentSize >= maximumSize) {
             System.out.println("Exceeded max space");
+            return;
         }
 
         array[currentSize] = value;
