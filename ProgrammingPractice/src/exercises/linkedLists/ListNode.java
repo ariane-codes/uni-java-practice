@@ -9,6 +9,7 @@ public class ListNode<T> {
         this.data = (T) data;
     }
 
+
     public ListNode<T> getNext() { return this.next; }
     public T getData() { return this.data; }
 
