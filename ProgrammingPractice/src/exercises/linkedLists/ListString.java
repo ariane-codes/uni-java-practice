@@ -1,11 +1,10 @@
 package exercises.linkedLists;
 import exercises.linkedLists.ListNode;
 
-import java.sql.Array;
 
 public class ListString {
-    private ListNode head;
-    private ListNode tail;
+    private ListNode<String> head;
+    private ListNode<String> tail;
     private int currentSize;
 
     public ListString() {
@@ -26,9 +25,9 @@ public class ListString {
 
     public void joinAtTheEnd (String data) {
         if (head == null) {
-            head = tail = new ListNode (null, data);
+            head = tail = new ListNode<String> (null, data);
         } else {
-            ListNode newNode = new ListNode(null, data);
+            ListNode<String> newNode = new ListNode<String>(null, data);
             tail.setNext(newNode);
             tail = newNode;
         }
@@ -56,7 +55,7 @@ public class ListString {
             return tail.getData();
         }
 
-        ListNode current = head;
+        ListNode<String> current = head;
         int currentIndex = 0;
 
         while (current != null) {
@@ -82,7 +81,7 @@ public class ListString {
             tail.setData(data);
         }
 
-        ListNode current = head;
+        ListNode<String> current = head;
         int currentIndex = 0;
 
         while (current != null) {
@@ -103,17 +102,17 @@ public class ListString {
         }
 
         if (index == currentSize - 1) {
-            ListNode newNode = new ListNode(null, data);
+            ListNode<String> newNode = new ListNode(null, data);
             this.tail.setNext(newNode);
             this.tail = newNode;
         }
 
-        ListNode current = head;
+        ListNode<String> current = head;
         int currentIndex = 0;
 
         while (current != null) {
             if (currentIndex == index) {
-                ListNode newNode = new ListNode(current.getNext(), data);
+                ListNode<String> newNode = new ListNode<String>(current.getNext(), data);
                 current.setNext(newNode);
                 currentSize ++;
             }
@@ -131,9 +130,9 @@ public class ListString {
             throw new ArrayIndexOutOfBoundsException(index);
         }
 
-        ListNode previous = null;
-        ListNode current = head;
-        ListNode next = head.getNext();
+        ListNode<String> previous = null;
+        ListNode<String> current = head;
+        ListNode<String> next = head.getNext();
         int currentIndex = 0;
 
         if (index == 0) {

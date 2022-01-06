@@ -1,33 +1,33 @@
 package exercises.linkedLists;
 
-public class ListNode {
-    private ListNode next;
-    private String data;
+public class ListNode<T> {
+    private ListNode<T> next;
+    private T data;
 
-    public ListNode (ListNode next, String data) {
+    public ListNode (ListNode<T> next, T data) {
         this.next = next;
-        this.data = data;
+        this.data = (T) data;
     }
 
-    public ListNode getNext() { return this.next; }
-    public String getData() { return this.data; }
+    public ListNode<T> getNext() { return this.next; }
+    public T getData() { return this.data; }
 
-    public void setNext(ListNode listNode) { this.next = listNode; }
-    public void setData(String data) { this.data = data; }
+    public void setNext(ListNode<T> listNode) { this.next = listNode; }
+    public void setData(T data) { this.data = data; }
 
-    public void joinAtTheEnd (String data) {
-        ListNode current = this;
+    public void joinAtTheEnd (T data) {
+        ListNode<T> current = this;
 
         // Walk the list until we find the last item.
         while (current.getNext() != null) {
             current = current.getNext();
         }
 
-        current.setNext( new ListNode (null, data ));
+        current.setNext( new ListNode<T> (null, data ));
     }
 
-    public String get (int index) throws ArrayIndexOutOfBoundsException {
-        ListNode current = this;
+    public T get (int index) throws ArrayIndexOutOfBoundsException {
+        ListNode<T> current = this;
         int currentIndex = 0;
 
         while (current != null) {
@@ -41,8 +41,8 @@ public class ListNode {
         throw new ArrayIndexOutOfBoundsException(index);
     }
 
-    public void setDataAtIndex (int index, String data) throws ArrayIndexOutOfBoundsException {
-        ListNode current = this;
+    public void setDataAtIndex (int index, T data) throws ArrayIndexOutOfBoundsException {
+        ListNode<T> current = this;
         int currentIndex = 0;
 
         while (current != null) {
@@ -58,8 +58,8 @@ public class ListNode {
         throw new ArrayIndexOutOfBoundsException(index);
     }
 
-    public ListNode insertNodeAtIndex (int index, String data) throws ArrayIndexOutOfBoundsException {
-        ListNode current = this;
+    public ListNode<T> insertNodeAtIndex (int index, T data) throws ArrayIndexOutOfBoundsException {
+        ListNode<T> current = this;
         int currentIndex = 0;
 
         if (index < 0) {
@@ -68,13 +68,13 @@ public class ListNode {
         }
 
         if (index == 0) {
-            return new ListNode(current, data);
+            return new ListNode<T>(current, data);
         }
 
         while (current != null) {
             if (currentIndex == index) {
-                ListNode nextNode = current.getNext();
-                current.setNext(new ListNode(nextNode, data));
+                ListNode<T> nextNode = current.getNext();
+                current.setNext(new ListNode<T>(nextNode, data));
                 return this;
             }
 
@@ -85,10 +85,10 @@ public class ListNode {
         throw new ArrayIndexOutOfBoundsException(index);
     }
 
-    public ListNode popNodeAtIndex (int index) throws ArrayIndexOutOfBoundsException {
-        ListNode previous = null;
-        ListNode current = this;
-        ListNode next = this.getNext();
+    public ListNode<T> popNodeAtIndex (int index) throws ArrayIndexOutOfBoundsException {
+        ListNode<T> previous = null;
+        ListNode<T> current = this;
+        ListNode<T> next = this.getNext();
         int currentIndex = 0;
 
         if (index < 0) {
