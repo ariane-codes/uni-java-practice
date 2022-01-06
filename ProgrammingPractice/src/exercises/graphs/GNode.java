@@ -15,6 +15,10 @@ public class GNode <T>{
         links.joinAtTheEnd(to);
     }
 
+    public boolean isEven () {
+        return this.links.size()%2 == 0;
+    }
+
     public int countNodes (List<GNode<T>> visited) {
         int sum = 0;
 

@@ -1,9 +1,10 @@
 package exercises.linkedLists;
 import exercises.linkedLists.ListNode;
 
-import java.sql.Array;
+import java.util.Iterator;
+import java.util.ListIterator;
 
-public class List<T> {
+public class List<T> implements Iterable<T> {
     private ListNode<T> head;
     private ListNode<T> tail;
     private int currentSize;
@@ -154,4 +155,32 @@ public class List<T> {
 
         return false;
     }
+
+    // Implementing the iterator
+    public Iterator<T> iterator () {
+        return new ListIterator<T>(head);
+    }
+
+    private static class ListIterator<T> implements Iterator<T> {
+        private ListNode<T> next;
+
+        public ListIterator (ListNode<T> next) {
+            this.next = next;
+        }
+
+        public boolean hasNext () {
+            return next != null;
+        }
+
+        public T next() {
+            ListNode<T> result = next;
+            next = next.getNext();
+            return result.getData();
+        }
+
+        public void remove () {
+            throw new UnsupportedOperationException();
+        }
+    }
+
 }

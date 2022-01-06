@@ -26,7 +26,19 @@ public class Graph<T> {
         } else {
             return 0;
         }
+    }
 
+    public boolean isConnected() {
+        return (size() == nodes.size());
+    }
+
+    public boolean isEulerian() {
+        for (GNode<T> node : nodes) {
+            if (!node.isEven()) {
+                return false;
+            }
+        }
+        return isConnected();
     }
 
     public static void main(String[] args) {
